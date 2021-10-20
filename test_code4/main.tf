@@ -43,18 +43,12 @@ module "create_eks_cluster" {
 }
 
 #IN order to use this resource, you should have AWSCLI & kubectl installed on the machine where terraform client installed
-resource "null_resource" "health_check_cluster" {
-  depends_on = [
-    module.create_eks_cluster.node_group
-  ]
-  provisioner "local-exec" {
-    command = "aws eks update-kubeconfig --name ${var.cluster_name} && kubectl get nodes"
-  }
-}
-
-# output :
-# D:\Projects\terraform-bootcamp-6-EKS>aws eks update-kubeconfig --name  eks_cluster && kubectl get nodes
-# Added new context arn:aws:eks:us-east-2:419835568062:cluster/eks_cluster to C:\Users\anantha.subramanian\.kube\config
-# NAME                                         STATUS   ROLES    AGE   VERSION
-# ip-96-10-0-14.us-east-2.compute.internal     Ready    <none>   15m   v1.19.6-eks-49a6c0
-# ip-96-10-12-117.us-east-2.compute.internal   Ready    <none>   15m   v1.19.6-eks-49a6c0
+#resource "null_resource" "health_check_cluster" {
+#  depends_on = [
+#    module.create_eks_cluster.node_group
+#  ]
+#  provisioner "local-exec" {
+#    command = "aws eks update-kubeconfig --name ${var.cluster_name} && kubectl get nodes"
+#  }
+#}
+# ---- provision is not work good
