@@ -5,7 +5,7 @@ locals {
     aws_subnet.eks-private-2.id,
   ]
 
-  node_role_arn = "arn:aws:iam::064058741680:root"
+  node_role_arn = "arn:aws:iam::064058741680:root"  #change id account and user
 }
 
 #####
@@ -22,9 +22,6 @@ module "eks-node-group" {
   max_size     = 3
   min_size     = 1
 
-  //  ec2_ssh_key = "voronenko_info"
-  //  kubernetes_labels = {
-  //  }
   instance_types = ["t3.small"]
   ami_release_version = "1.18.9-20210208"
   capacity_type = "SPOT"
