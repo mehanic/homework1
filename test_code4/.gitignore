@@ -1,0 +1,12 @@
+# Infrastructure ignores.
+.idea
+.terraform
+terraform.tfstate.d
+terraform.tfstate
+terraform.tfstate.backup
+
+config-map-aws-auth.yaml
+kubeconfig
+
+# The ssh key
+id_rsa*

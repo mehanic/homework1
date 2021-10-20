@@ -1,0 +1,12 @@
+module.eks.aws_eks_node_group.eks_node_group[0]: Still creating... [24m10s elapsed]
+module.eks.aws_eks_node_group.eks_node_group[0]: Still creating... [24m20s elapsed]
+╷
+│ Error: error waiting for EKS Node Group (eks-test-cluster-1:dev-1) to create: unexpected state 'CREATE_FAILED', wanted target 'ACTIVE'. last error: 1 error occurred:
+│ 	* i-0b1b1271fca985824: NodeCreationFailure: Instances failed to join the kubernetes cluster
+│ 
+│ 
+│ 
+│   with module.eks.aws_eks_node_group.eks_node_group[0],
+│   on modules/eks/eks_node_group.tf line 4, in resource "aws_eks_node_group" "eks_node_group":
+│    4: resource "aws_eks_node_group" "eks_node_group" {
+│ 
